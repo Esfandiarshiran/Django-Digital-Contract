@@ -51,7 +51,7 @@ https://django-simple-captcha.readthedocs.io/en/latest/usage.html <br />
 Run python manage.py makemigrations to create the migrations. <br />
 Run python manage.py  collectstatic to transform static files from asset to static_root. <br />
 Run python manage.py migrate to create the app models. <br />
-Run python manage.py createsuperuser to create an admin username, email, and password to log in. (Note that you have to input the right email address because you will receive the contract in your email inbox. Don’t Forget It.). <br />
+Run python manage.py createsuperuser to create an admin username, email, and password to log in. (Note that you have to input the right email address because you will receive the contract in your email inbox. (Don’t Forget It.)<br />
 Start the development server and visit http://127.0.0.1:8000 <br />
 
  
