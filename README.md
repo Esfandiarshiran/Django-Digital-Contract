@@ -31,7 +31,7 @@ Achieving all the above data just requires having a look at DocuSign documents, 
 5-account_id                (Account ID)<br />
 
 Note: As I mentioned previously, detecting all the confidential data is so straightforward. Log in for free on Docusign.com, make a quick app based on your platform(Django in this case), and finally achieve your goals. In addition, there are multiple videos on the DocuSign website that teach you how you are able to find them.<br />
- 
+
 With the above secret data, we can get the below information.<br />
 
 1-Consent URL<br />
@@ -45,7 +45,7 @@ It would be amazing. isn't it?<br />
 
 ## Installation<br />
 
-Run  pip install docusign-esign<br />   
+Run  pip install docusign-esign <br/>   
 Run pip install django-simple-captcha based on the below link.<br />
 https://django-simple-captcha.readthedocs.io/en/latest/usage.html <br />
 Run python manage.py makemigrations to create the migrations. <br />
