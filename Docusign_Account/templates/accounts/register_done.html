@@ -1,0 +1,15 @@
+{% extends 'shared/_Mainlayout.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="center" style="margin-bottom: 100px;margin-top: 50px;border: 5px;text-align: center">
+          <p style="text-align: center">
+              <p><h3 style="color:#F7941D">Welcome {{ new_user.first_name }}</h3></p>
+            <br>
+                        Your account has been successfully created. Now you can <a style="color: red" href="/account/login"> log in</a>.
+        <br>
+
+          </p>
+        </div>
+    
+{% endblock %}

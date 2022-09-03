@@ -1,0 +1,106 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+                    <Hr>
+					<h6 class="heading-section" style="color: #F7941D">Create an Account</h6>
+                    <p> Not That Enter valid Email Address</p>
+                    <hr>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-10">
+					<div class="wrap d-md-flex">
+                <div class="login-wrap p-4 p-md-5">
+
+                    <form method="POST"  action=""  >
+                           {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i>{{ register_form.username.label }}</label>
+                                <br>
+                                {{ register_form.username }}
+                                {% for error in register_form.username.errors %}
+                                <p style="color: red"> {{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i>{{ register_form.first_name.label }}</label>
+                                <br>
+                                {{ register_form.first_name }}
+                                {% for error in register_form.username.errors %}
+                                <p style="color: red"> {{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group" >
+                                <label for="email"><i class="zmdi zmdi-email"></i>{{ register_form.email.label }}</label>
+                                    <br>
+
+                                {{ register_form.email }}
+                                  {% for error in register_form.email.errors %}
+                                       <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i>{{ register_form.password.label }}</label>
+                                 <br>
+                                {{ register_form.password }}
+                                  {% for error in register_form.password.errors %}
+                                <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i>{{ register_form.re_password.label }}</label>
+                                <br>
+                                {{ register_form.re_password }}
+                              {% for error in register_form.re_password.errors %}
+                                <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                                <hr>
+                            </div>
+{#                            <div class="form-group">#}
+{#                                <br>#}
+{#                                {{ register_form.captcha }}#}
+{#                                {% for error in register_form.captcha.errors %}#}
+{#                                <p style="color: red"> {{ error }}</p>#}
+{#                                {% endfor %}#}
+{#                            </div>#}
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a style="color: red" href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class= "form-group form-button">
+                                <button type="submit" class="btn btn-warning" id="signup"  value="Submit"> Create my Account</button>
+                            </div>
+                        </form>
+
+
+
+		        </div>
+						<div class="img"  style="margin-right:50px" >
+                            <img width="500" height="500" src={% static 'images/registerpic.png' %} alt="login-pic">
+                            <p style="margin-left: 60px;color: #F7941D"> Meet us on Social Media</p>
+                            <p ></p>
+                            <div class="w-100" >
+									<p class="social-media d-flex justify-content-end" style="margin-right: 100px">
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook , fa-4x" style="margin-right: 30px; "></span></a>
+
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter fa-4x" style="margin-right: 30px"></span></a>
+
+                                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-instagram fa-4x" style="margin-right: 30px"></span></a>
+									</p>
+                            </div>
+
+			      </div>
+
+		      </div>
+				</div>
+			</div>
+		</div>
+</section>
+
+{% endblock %}

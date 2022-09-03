@@ -1,0 +1,106 @@
+{% load static %}
+{% include 'shared/headerReferences.html' %}
+
+	<!-- Header -->
+	<header class="header shop">
+		<!-- Topbar -->
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-12 col-12">
+						<!-- Top Left -->
+						<div class="top-left">
+							<ul class="list-main">
+								<li><i class="ti-headphone-alt"></i> +989366449567</li>
+								<li><i class="ti-email"></i> esf.shiran@gmail.com</li>
+							</ul>
+						</div>
+						<!--/ End Top Left -->
+					</div>
+					<div class="col-lg-7 col-md-12 col-12">
+						<!-- Top Right -->
+						<div class="right-content">
+							<ul class="list-main">
+							</ul>
+						</div>
+						<!-- End Top Right -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Topbar -->
+		<div class="middle-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-12">
+						<!-- Logo -->
+						<div >
+                                <a href="/"><img style="height: 60px" src="{% static 'images/dc.png' %}"  alt="logo"></a>
+						</div>
+						<!--/ End Logo -->
+
+						<div class="mobile-nav"></div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-12">
+						<div class="right-bar">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Inner -->
+		<div class="header-inner ">
+			<div class="container ">
+				<div class="cat-nav-head " >
+					<div class="row">
+						<div class="col-lg-3">
+
+						</div>
+						<div class="col-lg-9 col-12">
+							<div class="menu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">
+										<div class="nav-inner">
+											<ul class="nav main-menu menu navbar-nav">
+                                                 {% if request.user.is_authenticated %}
+													<li class="active" style="margin-right: 18px"><a href="/">Home</a></li>
+                                                     <li><a href="#">contract<i class="ti-angle-down"></i></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="/contract/open-contract/">+ Add New Contract</a></li>
+{#                                                            <li><a href="#">All Your Contracts</a></li>#}
+                                                        </ul>
+                                                    </li>
+{#                                                    <li style="margin-right: 18px"><a href="/account/dashboard/">My Dashboard</a></li>#}
+													<li style="margin-right: 18px"><a href="/contact/">Contact Us</a></li>
+                                                    <li style="margin-right: 18px"><a href="/about/">About us</a></li>
+                                                    <li><a href="#">My Account<i class="ti-angle-down"></i></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="/account/password_change/">Change Password</a></li>
+                                                            <li><a href="/account/password_reset/">Reset Password</a></li>
+                                                            <li><a href="/account/logout/">Log out</a></li>
+                                                        </ul>
+                                                    </li>
+                                                {% else %}
+                                                     <li class="active" style="margin-right: 18px"><a href="/">Home</a></li>
+                                                    <li style="margin-right: 18px"><a href="#">Contact Us</a></li>
+                                                    <li style="margin-right: 18px"><a href="#">About us</a></li>
+                                                     <li><a href="/account/register/">Register</a></li>
+                                                     <li><a href="/account/login/">Login</a></li>
+                                                {% endif %}
+
+												</ul>
+										</div>
+									</div>
+								</nav>
+								<!--/ End Main Menu -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!--/ End Header -->

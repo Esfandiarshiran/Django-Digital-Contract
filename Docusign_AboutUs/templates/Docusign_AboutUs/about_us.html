@@ -1,0 +1,41 @@
+{% extends 'shared/_Mainlayout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href={% static "css/about-us.css" %}>
+    <div class="about-section" style="background-color: #333;color: whitesmoke">
+  <h1 align="center" style="color: yellow">About Us </h1>
+  <p align="center">Lorem ipsum qui officia deserunt mollit anim id est laborum.</p>
+
+</div>
+<P>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed blandit libero volutpat sed cras. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Integer eget aliquet nibh praesent tristique magna sit amet purus. Feugiat pretium nibh ipsum consequat. Ut etiam sit amet nisl purus. Felis imperdiet proin fermentum leo vel orci porta. Vitae purus faucibus ornare suspendisse sed nisi. Eget aliquet nibh praesent tristique magna sit. Erat nam at lectus urna duis convallis convallis tellus. Odio eu feugiat pretium nibh. Elementum nibh tellus molestie nunc non blandit. Enim nec dui nunc mattis enim ut tellus elementum.
+
+Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas. Neque ornare aenean euismod elementum nisi. In tellus integer feugiat scelerisque varius morbi. Risus commodo viverra maecenas accumsan lacus vel. Cursus mattis molestie a iaculis. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Morbi non arcu risus quis varius quam quisque id. Urna molestie at elementum eu. Pharetra vel turpis nunc eget lorem dolor sed viverra. Mi proin sed libero enim sed faucibus turpis in. Nunc sed velit dignissim sodales ut eu sem integer vitae. Ullamcorper sit amet risus nullam. Aliquam id diam maecenas ultricies mi. At auctor urna nunc id cursus metus aliquam eleifend. Feugiat vivamus at augue eget. Lectus nulla at volutpat diam ut venenatis. Fringilla est ullamcorper eget nulla facilisi etiam dignissim.
+
+Sit amet consectetur adipiscing elit duis tristique sollicitudin. Bibendum at varius vel pharetra vel. Ac orci phasellus egestas tellus rutrum. Ut tristique et egestas quis. Sit amet purus gravida quis blandit turpis. Eget aliquet nibh praesent tristique magna sit amet. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Et malesuada fames ac turpis egestas. Diam donec adipiscing tristique risus nec feugiat in fermentum posuere. Ac auctor augue mauris augue neque gravida in fermentum et. Nunc id cursus metus aliquam eleifend mi in nulla. Mattis enim ut tellus elementum sagittis vitae et. Nibh cras pulvinar mattis nunc sed.
+
+Dui id ornare arcu odio ut. Posuere morbi leo urna molestie at elementum eu. Risus sed vulputate odio ut enim. Integer vitae justo eget magna. Amet cursus sit amet dictum sit. Quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Blandit volutpat maecenas volutpat blandit aliquam etiam erat. Id consectetur purus ut faucibus pulvinar elementum integer. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Dignissim cras tincidunt lobortis feugiat vivamus at. Ultricies leo integer malesuada nunc vel risus commodo. Senectus et netus et malesuada. Cursus turpis massa tincidunt dui. In mollis nunc sed id semper risus. Dictumst vestibulum rhoncus est pellentesque.
+
+At ultrices mi tempus imperdiet nulla. Imperdiet proin fermentum leo vel orci porta. Elit ut aliquam purus sit amet luctus venenatis lectus. Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. At augue eget arcu dictum varius. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Amet commodo nulla facilisi nullam. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Nam at lectus urna duis convallis convallis tellus. Etiam tempor orci eu lobortis.
+
+</P>
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+ {% for member in team_members %}
+  <div class="column">
+    <div class="card">
+      <img src="{{ member.picture.url }}" alt="Jane" style="width:200px;">
+      <div class="container">
+        <h2>{{ member.title }}</h2>
+        <p class="title">{{ member.job_title }}</p>
+        <p>{{ member.introduce }}</p>
+        <p>{{ member.email }}</p>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

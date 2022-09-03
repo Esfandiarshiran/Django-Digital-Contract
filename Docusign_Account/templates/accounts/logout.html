@@ -1,0 +1,15 @@
+{% extends 'shared/_Mainlayout.html' %}
+{% load static %}
+
+{% block content %}
+
+   <h4 style="text-align: center; margin-top: 100px; color: #F7941D"> Log out </h4>
+    <hr>
+    <p style="text-align: center; margin-top: 110px; color: #F7941D">
+        You have been successfully logged out
+        <p style="margin-top: 120px ">
+        You can <a href="{% url 'login' %}">Log-in again</a>
+        </p>
+    </p>
+
+{% endblock %}

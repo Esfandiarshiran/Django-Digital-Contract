@@ -1,0 +1,151 @@
+{% extends 'shared/_Mainlayout.html' %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Start Contact -->
+	<section id="contact-us" class="contact-us section">
+		<div class="container">
+				<div class="contact-head">
+					<div class="row">
+						<div class="col-lg-8 col-12">
+							<div class="form-main">
+
+								<div class="title">
+									<h4>Get in touch</h4>
+									<h3>Write us a message</h3>
+								</div>
+								<form class="form" method="post" action="">
+                                     {% csrf_token %}
+									<div class="row">
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Name<span>*</span></label>
+                                                   {% for error in contact_form.full_name.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+												{{ contact_form.full_name }}
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Phone <span></span></label>
+                                                   {% for error in contact_form.phone.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+                                                {{ contact_form.phone }}
+
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Email<span>*</span></label>
+												{{ contact_form.email }}
+                                                   {% for error in contact_form.email.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="form-group">
+												<label>Your Subjects<span>*</span></label>
+												{{ contact_form.subject }}
+                                                   {% for error in contact_form.subject.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-group message">
+												<label>your message<span>*</span></label>
+												{{ contact_form.text }}
+                                                 {% for error in contact_form.text.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+											</div>
+										</div>
+                                            <div class="form-group" style="width: 200px">
+												{{ contact_form.captcha }}
+                                                {% for error in contact_form.captcha.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+											</div>
+										<div class="col-12">
+											<div class="form-group button">
+												<button type="submit" class="btn ">Send Message</button>
+
+{#                                                <p style="color: red"> {% if massage %}{{ message }}</p>#}
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4 col-12">
+							<div class="single-head">
+								<div class="single-info">
+									<i class="fa fa-phone"></i>
+									<h4 class="title">Call us Now:</h4>
+									<ul>
+										<li>{{site_setting.first_phone }}</li>
+                                        <li>{{site_setting.seconde_phone }}</li>
+                                        <li>{{site_setting.Third_phone }}</li>
+									</ul>
+								</div>
+								<div class="single-info">
+									<i class="fa fa-envelope-open"></i>
+									<h4 class="title">Email:</h4>
+									<ul>
+                                        <li><a href="mailto:{{ site_setting.first_email }}">{{site_setting.first_email}}</a></li>
+                                        <li><a href="mailto:{{ site_setting.second_email }}"> {{site_setting.second_email}}</a></li>
+                                        <li><a href="mailto:{{ site_setting.second_email }}"> {{site_setting.third_email}} </a></li>
+
+
+									</ul>
+								</div>
+								<div class="single-info">
+									<i class="fa fa-location-arrow"></i>
+									<h4 class="title">Our Address:</h4>
+									<ul>
+										<li>{{ site_setting.address }}</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	<!--/ End Contact -->
+
+	<!-- Map Section -->
+	<div class="map-section">
+		<div id="myMap"></div>
+	</div>
+	<!--/ End Map Section -->
+
+	<!-- Start Shop Newsletter  -->
+	<section class="shop-newsletter section">
+		<div class="container">
+			<div class="inner-top">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 col-12">
+						<!-- Start Newsletter Inner -->
+						<div class="inner">
+							<h4>Newsletter</h4>
+							<p> Subscribe to our newsletter </p>
+							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+								<input name="EMAIL" placeholder="Your email address" required="" type="email">
+								<button class="btn">Subscribe</button>
+							</form>
+						</div>
+						<!-- End Newsletter Inner -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Newsletter -->
+
+
+{% endblock %}

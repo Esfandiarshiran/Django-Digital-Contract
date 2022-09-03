@@ -1,0 +1,44 @@
+{% extends 'shared/_Mainlayout.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- Start Contact -->
+	<section id="contact-us" class="contact-us section">
+		<div class="container">
+				<div class="contact-head">
+					<div class="row">
+						<div class="col-lg-8 col-12">
+							<div class="form-main">
+
+								<div class="title">
+									<h4>Contract </h4>
+									<h3>Make new contract</h3>
+								</div>
+								<form class="form" method="post" >
+                                     {% csrf_token %}
+									<div class="row">
+										<div class="col-12">
+											<div class="form-group message" style="">
+												<label>Contract TEXT<span>*</span></label>
+												{{ form.contract }}
+                                                 {% for error in form.contract.errors %}
+                                                   <p style="color: red">{{ error }}</p>
+                                                 {% endfor %}
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-group button">
+												<button href="contract/open-contract/" type="submit" class="btn ">Confirm Your Contract </button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	<!--/ End Contact -->
+
+{% endblock %}
