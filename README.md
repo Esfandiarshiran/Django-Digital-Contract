@@ -9,7 +9,6 @@ Django-DocuSign is under development. The project is not mature yet, but users c
 I invite smart programmers to add more features to the app. So, help is welcome! Feel free to report issues, request features, or refactor them.<br />
  
 ## Next version<br />
- 
 I suggest software developers add features like adding PDF and DOC as documents to sign. It would be so easy, and there are samples in the Docusign documentation. (There are no differences in the process).<br />
  
 ## Features<br />
